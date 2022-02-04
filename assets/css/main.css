@@ -34,11 +34,20 @@ body {
 }
  
 .navbar-nav { 
-    display: flex; 
-}
+    display: flex;
+} 
 
 .navbar-nav li:not(:last-child) { margin-right: 60px; }
  
+.navbar-link {
+    color: var(--white);
+    cursor: pointer;    
+}
+
+.navbar-link:hover {
+    color: var(--accent-color);
+}
+
 .navbar-actions {
     display: flex;
     align-items: center;
