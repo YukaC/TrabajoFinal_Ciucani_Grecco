@@ -33,8 +33,10 @@ body {
    font-size: var(--fs-lg);
 }
  
-.navbar-nav { display: flex; }
- 
+.navbar-nav { 
+    display: flex; 
+}
+
 .navbar-nav li:not(:last-child) { margin-right: 60px; }
  
 .navbar-actions {
@@ -52,17 +54,28 @@ body {
 }
 
 .navbar-form-search {
-    background: var(--accent-color);
+    background: var(--search-bar);
     width: 100%;
     padding: 12px 20px;
     border-radius: 15px;
-    color: var(--white);
+    color: var(--main-color);
     font-size: var(--fs-sm);
 }
 
 
 .navbar-form-close,
 .navbar-search-btn { display: none; }
+
+.btn{
+    padding: 0.7rem 1.4rem;
+    background: var(--accent-color);
+    color: var(--white);
+    font-weight: 400;
+    border-radius: 0.5rem;
+}
+.btn:hover{
+    background: rgb(131, 37, 37);
+}
 
 .navbar-signin {
   display: flex;
@@ -90,6 +103,7 @@ a {
     --main-color: hsl(0, 0%, 0%);
     --accent-color: hsla(0, 100%, 50%, 0.8);
     --white: hsl(0, 0%, 88%);
+    --search-bar: hsl(0, 0%, 63%);
 
     /* Tipografia */
     
