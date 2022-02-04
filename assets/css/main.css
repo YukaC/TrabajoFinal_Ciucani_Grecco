@@ -1,0 +1,103 @@
+* {
+    margin: 0;
+    padding: 0;
+    transition: all 0.5s ease;
+}
+  
+
+  /* Fuente Default */
+  
+html { font-family: var(--ff-inter); }
+
+/* Colores de todos los titulos */
+  
+h1, h2, h3, h4, h5, h6 { color: var(--white); }
+  
+/* Default background color */
+  
+body {
+    background: var(--main-color);
+    color: var(--white);
+}
+
+.container {
+   max-width: 1440px;
+   margin: auto;
+}
+ 
+.navbar {
+   height: 100px;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   font-size: var(--fs-lg);
+}
+ 
+.navbar-nav { display: flex; }
+ 
+.navbar-nav li:not(:last-child) { margin-right: 60px; }
+ 
+.navbar-actions {
+    display: flex;
+    align-items: center;
+}
+  
+.navbar-form {
+    position: relative;
+    margin-right: 50px;
+}
+
+::placeholder {
+    color: var(--main-color);
+}
+
+.navbar-form-search {
+    background: var(--accent-color);
+    width: 100%;
+    padding: 12px 20px;
+    border-radius: 15px;
+    color: var(--white);
+    font-size: var(--fs-sm);
+}
+
+
+.navbar-form-close,
+.navbar-search-btn { display: none; }
+
+.navbar-signin {
+  display: flex;
+  align-items: center;
+}
+  
+input, button, select {
+    border: none;
+}
+  
+li { list-style: none; }
+
+a {
+    text-decoration: none;
+    display: block;
+    color: var(--white);
+}
+
+    /* Variables */
+
+:root {
+
+    /* Colores */
+
+    --main-color: hsl(0, 0%, 0%);
+    --accent-color: hsla(0, 100%, 50%, 0.8);
+    --white: hsl(0, 0%, 88%);
+
+    /* Tipografia */
+    
+    --ff-inter: "Inter", sans-serif;
+
+    /* Tamaño de fuente */
+
+    --fs-lg:           20px;
+    --fs-sm:           16px;
+
+}
