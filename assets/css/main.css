@@ -20,11 +20,26 @@ body {
     color: var(--white);
 }
 
+img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    object-fit: cover;
+}
+
+.navbar,
+.banner {
+  padding: 0 var(--px);
+}
+
 .container {
    max-width: 1440px;
    margin: auto;
 }
  
+/* Navbar */
+
 .navbar {
    height: 100px;
    display: flex;
@@ -71,7 +86,6 @@ body {
     font-size: var(--fs-sm);
 }
 
-
 .navbar-form-close,
 .navbar-search-btn { display: none; }
 
@@ -102,6 +116,49 @@ a {
     display: block;
     color: var(--white);
 }
+
+/* Banner de Pelicula Destacada */
+
+ .banner { margin-bottom: 60px; }
+
+ .banner-card {
+   position: relative;
+   height: 400px;
+   overflow: hidden;
+   border-radius: 20px;
+   cursor: pointer;
+ }
+ 
+ .banner-img { object-position: top; }
+ 
+ .banner-card:hover .banner-img { transform: scale(1.1); }
+ 
+ .banner-card .card-content {
+   position: absolute;
+   right:  80px;
+   bottom: 60px;
+   left:   80px;
+ }
+ 
+ .banner-card .card-info {
+   display:     flex;
+   align-items: center;
+   margin-bottom: 20px;
+ }
+ 
+ .banner-card .card-info div {
+   display:     flex;
+   align-items: center;
+   margin-right: 20px;
+ }
+ 
+ .banner-card .card-title {
+   font-size: 3em;
+   color: var(--white);
+   text-shadow: 2px 0 2px #0007;
+ }
+ 
+ .movie-card .genre { margin-right: 8px; }
 
     /* Variables */
 
