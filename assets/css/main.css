@@ -135,19 +135,19 @@ a {
  
  .banner-card .card-content {
    position: absolute;
-   right:  80px;
+   right: 80px;
    bottom: 60px;
-   left:   80px;
+   left: 80px;
  }
  
  .banner-card .card-info {
-   display:     flex;
+   display: flex;
    align-items: center;
    margin-bottom: 20px;
  }
  
  .banner-card .card-info div {
-   display:     flex;
+   display: flex;
    align-items: center;
    margin-right: 20px;
  }
@@ -158,26 +158,93 @@ a {
    text-shadow: 2px 0 2px #0007;
  }
  
- .movie-card .genre { margin-right: 8px; }
+  /* Pie de pagina */
+
+    .footer {
+      background: var(--main-color);
+      padding: 80px var(--px) 40px;
+    }
+    
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      border-bottom: 1px solid var(--main-color);
+      padding-bottom: 80px;
+      margin-left: 35%;
+    }
+    
+    .footer-brand {
+      max-width: 250px;
+      margin-right: 130px;
+    }
+    
+    .footer-logo {
+      width: 100px;
+      margin-bottom: 30px;
+    }
+    
+    .slogan {
+      font-size: var(--main-color);
+      line-height: 20px;
+      margin-bottom: 20px;
+    }
+    
+    .footer-links {
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 50px;
+      align-items: flex-end;
+    }
+    
+    .link-heading { margin-bottom: 20px; }
+    
+    .link-item { font-size: var(--white); }
+    
+    ul .link-item:not(:last-child) { margin-bottom: 10px; }
+    
+    .link-item:hover a { color: var(--accent-color); }
+    
+    .footer-copyright {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 40px;
+      margin-left: 35%;
+    }
+    
+    /* Wrapper llama a una o varias funciones */
+    
+    .footer-copyright p,
+    .wrapper a { font-size: var(--main-color); }
+    
+    .wrapper a:hover { color: var(--white); }
+    
+    .wrapper { display: flex; }
+    
+    .wrapper a:not(:last-child) { margin-right: 30px; }
+
+    .wrapper {margin-right: 38%;}
+    
 
     /* Variables */
 
-:root {
+    :root {
 
-    /* Colores */
-
-    --main-color: hsl(0, 0%, 0%);
-    --accent-color: hsla(0, 100%, 50%, 0.8);
-    --white: hsl(0, 0%, 88%);
-    --search-bar: hsl(0, 0%, 63%);
-
-    /* Tipografia */
-    
-    --ff-inter: "Inter", sans-serif;
-
-    /* Tamaño de fuente */
-
-    --fs-lg:           20px;
-    --fs-sm:           16px;
-
-}
+      /* Colores */
+  
+      --main-color: hsl(0, 0%, 0%);
+      --accent-color: hsla(0, 100%, 50%, 0.8);
+      --white: hsl(0, 0%, 88%);
+      --search-bar: hsl(0, 0%, 63%);
+  
+      /* Tipografia */
+      
+      --ff-inter: "Inter", sans-serif;
+  
+      /* Tamaño de fuente */
+  
+      --fs-lg: 20px;
+      --fs-sm: 16px;
+  }
