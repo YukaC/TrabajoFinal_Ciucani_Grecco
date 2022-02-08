@@ -45,7 +45,7 @@ img {
    display: flex;
    justify-content: space-between;
    align-items: center;
-   font-size: var(--fs-lg);
+   font-size: var(--fs-bg);
 }
  
 .navbar-nav { 
@@ -158,6 +158,89 @@ a {
    text-shadow: 2px 0 2px #0007;
  }
  
+  /* Grid de Peliculas */
+
+  .movies-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px;
+    margin-bottom: 60px;
+  }
+  
+  .movie-card {
+    /* Variable para la escala de los elementos en el hover */
+    --scale: 0.8;
+    cursor: pointer;
+  }
+  
+  .movie-card .card-head {
+    position: relative;
+    height: 85%;
+    border-radius: 15px;
+    margin-bottom: 15px;
+    overflow: hidden;
+  }
+  
+  .movie-card .card-overlay {
+    opacity: 0;
+    position: absolute;
+    inset: 0;
+    backdrop-filter: blur(5px);
+  }
+  
+  .movie-card:hover .card-overlay { opacity: 1; }
+  
+  .movie-card .rating {
+    position: absolute;
+    top: 15px;
+    padding: 6px;
+    border-radius: 10px;
+    color: var(--main-color);
+    transform: scale(var(--scale));
+  }
+  
+  .movie-card .rating {
+    display: flex;
+    align-items: center;
+    right: 15px;
+    background: var(--main-color);
+  }
+  
+  .movie-card .rating span {
+    color: var(--white);
+    font-size: var(--fs-sm);
+    font-weight: var(--fw-5);
+  }
+  
+  .movie-card .rating img {
+    width: 24px;
+    margin-right: 5px;
+  }
+  
+  .movie-card .play {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(var(--scale));
+  }
+  
+  .movie-card .play img {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .movie-card .card-title {
+    font-size: var(--fs-md);
+    font-weight: var(--fw-5);
+    margin-bottom: 5px;
+  }
+  
+  .movie-card:hover .card-title { color: var(--accent-color); }
+  
+  .movie-card .card-info {
+    font-size: var(--fs-x-sm);
+  }
+
   /* Pie de pagina */
 
     .footer {
@@ -245,6 +328,8 @@ a {
   
       /* Tamaño de fuente */
   
-      --fs-lg: 20px;
-      --fs-sm: 16px;
+    --fs-bg:           22px;
+    --fs-md:           17px;
+    --fs-sm:           14px;
+    --fs-x-sm:         12px;
   }
