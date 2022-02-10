@@ -300,15 +300,15 @@ a {
     /* Wrapper llama a una o varias funciones */
     
     .footer-copyright p,
-    .wrapper a { font-size: var(--main-color); }
+    .terms-condit a { font-size: var(--main-color); }
     
-    .wrapper a:hover { color: var(--white); }
+    .terms-condit a:hover { color: var(--white); }
     
-    .wrapper { display: flex; }
+    .terms-condit { display: flex; }
     
-    .wrapper a:not(:last-child) { margin-right: 30px; }
+    .terms-condit a:not(:last-child) { margin-right: 30px; }
 
-    .wrapper {margin-right: 38%;}
+    .terms-condit {margin-right: 38%;}
     
 
     /* Variables */
