@@ -94,10 +94,25 @@ img {
     background: var(--accent-color);
     color: var(--white);
     font-weight: 400;
-    border-radius: 0.5rem;
+    border-radius: 20px;
 }
 .btn:hover{
     background: rgb(131, 37, 37);
+}
+
+.btn-footer{
+  border-radius: 20px;
+  padding: 0.4rem 1.0rem;
+  width: 10%;
+  height: 10%;
+}
+
+.btn-footer:hover{
+  background: rgb(131, 37, 37);
+}
+
+#back{
+  margin-left: 45%;
 }
 
 .navbar-signin {

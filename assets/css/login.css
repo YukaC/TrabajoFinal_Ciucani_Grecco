@@ -1,0 +1,122 @@
+html { font-family: var(--ff-inter); }
+
+body {
+    margin: 0;
+    padding: 0;
+    background: url(../images/movies/peliculas.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    font-family: sans-serif;
+  }
+  
+  .login-box {
+    width: 320px;
+    height: 420px;
+    background: var(--main-color);
+    color: var(--white);
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    padding: 70px 30px;
+    border-radius: 20px;
+  }
+  
+  .login-box .avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    position: absolute;
+    top: -50px;
+    left: calc(50% - 50px);
+  }
+  
+  .login-box h1 {
+    margin: 0;
+    padding: 0 0 20px;
+    text-align: center;
+    font-size: 22px;
+  }
+  
+  .login-box label {
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+    display: block;
+    text-align: center;
+  }
+  
+  .login-box input {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  .login-box #IU, .login-box #IC {
+    border: none;
+    border-bottom: 1px solid var(--white);
+    background: transparent;
+    outline: none;
+    height: 40px;
+    color: var(--white);
+    font-size: 16px;
+    text-align: center;
+  }
+  
+  .login-box #IS {
+    border: none;
+    outline: none;
+    height: 40px;
+    background: var(--accent-color);
+    color: var(--white);
+    font-size: 18px;
+    border-radius: 20px;
+    transition: all 0.5s ease;
+  }
+  
+  .login-box #IS:hover {
+    cursor: pointer;
+    background: rgb(131, 37, 37);
+    color: var(--white);
+  }
+  
+  .login-box a {
+    text-decoration: none;
+    font-size: 12px;
+    line-height: 20px;
+    color: var(--white);
+    transition: all 0.4s ease;
+  }
+  
+  .login-box a:hover {
+    color: rgb(131, 37, 37);
+  }
+
+  .back-button{
+    width: 80px;
+    height: 80px;
+    margin-top: 1%;
+    margin-left: 1%;
+    transition: all 0.4s ease;
+  }
+  
+  .back-button:hover{
+    filter: drop-shadow(0 0 0.40rem rgb(0, 0, 0));
+  }
+   /* Variables */
+
+   :root {
+
+    /* Colores */
+
+    --main-color: hsl(0, 0%, 0%);
+    --accent-color: hsla(0, 100%, 50%, 0.8);
+    --white: hsl(0, 0%, 88%);
+    --search-bar: hsl(0, 0%, 63%);
+
+    /* Tipografia */
+    
+    --ff-inter: "Inter", sans-serif;
+}
