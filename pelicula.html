@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ver Jhon Wick 3: Parabellum</title>
@@ -14,17 +15,17 @@
     <link href="https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900" rel="stylesheet" />
 
     <script src="assets/js/jquery-3.6.0.min.js"></script>
-    <script src="assets/js/main.js"></script>
+    <script src="assets/js/film.js"></script>
 
 </head>
 <body>
-
-    <div class="container">
+  
+  <div class="container">
 
     <header class="">
         <div class="navbar-cont">
   
-          <a href="./index.html">
+          <a href="./index.html" class="a-fix">
             <img src="./assets/images/logo.png" alt="" style="width: 95px; height: 95px;">
           </a>
   
@@ -33,8 +34,8 @@
           <nav class="" style="margin-right: 35%">
             <ul class="navbar-nav">
   
-              <li> <a href="./index.html" class="navbar-link">Inicio</a> </li>
-              <li> <a href="#categorias" class="navbar-link">Categorias</a> </li>
+              <li> <a href="./index.html" class="navbar-link a-fix">Inicio</a> </li>
+              <li> <a href="#categorias" class="navbar-link a-fix">Categorias</a> </li>
   
             </ul>
           </nav>
@@ -51,7 +52,7 @@
               </button>
             </form>
   
-            <a href="#" class="navbar-signin">
+            <a href="#" class="navbar-signin a-fix">
               <span class="btn">Iniciar Sesión</span>
             <!--Agregar imagen de sesion-->
             </a>
@@ -63,17 +64,17 @@
 
       <!--Datos de la pelicula-->
 
-      <div class="movie-card-particular">
-            <img src="./assets/images/movies/jhon-wick-3.jpg" alt="" class="card-img-particular">
-            <h1 class="movie-card-text">John Wick 3: Parabellum</h1>
-            <p style="margin-left: 20%; margin-top: 1%;">John Wick (Keanu Reeves) regresa a la acción, solo que esta vez con una recompensa de 14 millones de dólares sobre su cabeza 
-            <br> y con un ejército de mercenarios intentando darle caza. Tras asesinar a uno de los miembros del gremio de asesinos al que pertenecía, Wick
-            <br> es expulsado de la organización, pasando a convertirse en el centro de atención de multitud de asesinos a sueldo que esperan detrás de cada esquina para tratar de deshacerse de él.</p>
-              
-            <p style="margin-left: 20%; margin-top: 4%;">Director: Chad Stahelski<br>
-              Genero: Acción/Suspenso</p>
-            <p style="margin-left: 20%; margin-top: 2%;">Puntuacion: 9.1</p>  
-            <p style="margin-left: 20%; margin-top: 2%;">2h 11m<br>2019</p>
+      <div class="movie-card-particular" id="movie-part">
+
+        <img src="" class="card-img-particular" id="p-img">
+        <h1 class="movie-card-text" id="p-nombre"></h1>
+        <p class="info-film-u" id="p-sinopsis"></p>
+        <p class="info-film-u" style="margin-top: 2%;" id="p-genero"></p>
+        <p class="info-film-u" id="p-director"><br>
+        <p class="info-film-u" id="p-duracion"><br>
+        <p class="info-film-u" id="p-año"></p>
+        <p class="info-film-u" id="p-score"></p>
+        
       </div>
 
       <!--Comentarios-->
@@ -91,8 +92,7 @@
             <p style="margin-left: 15%; margin-top: 2%;">prueba</p>
           </div>
       </div>
-
     </div> 
-  
+
 </body>
 </html>

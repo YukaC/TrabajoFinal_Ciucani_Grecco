@@ -5,19 +5,18 @@ $( document ).ready(function() {
         headers: {  'Access-Control-Allow-Origin': '*' },
         contentType: "application/json; charset=utf-8"
     })
-        .done(function(films) {
-            console.log(films)
+        .done(function(peliculas) {
             
-            $.each(films, function(index, film) {
+            $.each(peliculas, function(index, pelicula) {
                 $('#movies-grid').append('\
                 <div class="movie-card">\
                 <div class="card-head">\
-                  <a href="./pelicula.html">\
-                  <img src="http://127.0.0.1:5000/static/'+film.id+'.jpg" alt="" class="card-img">\
+                  <a href="./pelicula.html?id='+pelicula.id+'">\
+                  <img src="http://127.0.0.1:5000/static/'+pelicula.id+'.jpg" alt="" class="card-img">\
                   <div class="card-overlay">\
                     <div class="rating">\
                       <img src= "assets/images/star.png">\
-                      <span>'+film.score+'</span>\
+                      <span>'+pelicula.score+'</span>\
                     </div>\
                     <div class="play">\
                       <img src= "assets/images/play-movie.png">\
@@ -26,10 +25,10 @@ $( document ).ready(function() {
                   </a>\
                 </div>\
                 <div class="card-body">\
-                  <h3 class="card-title">'+film.name+'</h3>\
+                  <h3 class="card-title">'+pelicula.nombre+'</h3>\
                   <div class="card-info">\
-                    <span class="genre">'+film.g1_name+'/'+film.g2_name +'</span>\
-                    <span class="year">'+film.year+'</span>\
+                    <span class="genre">'+pelicula.genero+'/'+pelicula.genero2 +'</span>\
+                    <span class="year">'+pelicula.year+'</span>\
                   </div>\
                 </div>\
               </div>')

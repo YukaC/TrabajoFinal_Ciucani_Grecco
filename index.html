@@ -19,6 +19,7 @@
 
   <script src="assets/js/jquery-3.6.0.min.js"></script>
   <script src="assets/js/main.js"></script>
+  <script src="assets/js/banner-main.js"></script>
 
 </head>
 
@@ -28,10 +29,10 @@
 
     <!-- Header  -->
 
-    <header class="">
+    <header>
       <div class="navbar-cont">
 
-        <a href="./index.html">
+        <a href="./index.html" class="a-fix">
           <img src="./assets/images/logo.png" alt="" style="width: 95px; height: 95px;">
         </a>
 
@@ -40,8 +41,8 @@
         <nav class="" style="margin-right: 35%">
           <ul class="navbar-nav">
 
-            <li> <a href="./index.html" class="navbar-link">Inicio</a> </li>
-            <li> <a href="#categorias" class="navbar-link">Categorias</a> </li>
+            <li> <a href="./index.html" class="navbar-link a-fix">Inicio</a> </li>
+            <li> <a href="#categorias" class="navbar-link a-fix">Categorias</a> </li>
 
           </ul>
         </nav>
@@ -60,7 +61,7 @@
             </button>
           </div>
 
-          <a href="./login.html" class="navbar-signin">
+          <a href="./login.html" class="navbar-signin a-fix">
             <span class="btn">Iniciar Sesión</span>
           <!--Agregar imagen de sesion-->
           </a>
@@ -76,31 +77,36 @@
       <!-- Banner -->
       <section class="banner">
         <div class="banner-card">
-
-          <img src="./assets/images/John-Wick-3.jpg" class="banner-img" alt="">
-
+          
+          <a id="link-film" >
+          
+          <img src="" class="banner-img" id="img-banner">
+        
           <div class="card-content">
             <div class="card-info">
 
-              <div class="genre">
-                <span>Acción/Suspenso</span>
+              <div class="gender">
+                <span id="gender-span"></span>
               </div>
 
               <div class="year">
-                <span>2019</span>
+                <span id="year-span"></span>
               </div>
 
               <div class="duration">
-                <span>2h 11m</span>
+                <span id="duration-span"></span>
               </div>
 
-              <div class="quality">4K</div>
+              <div class="score">
+                <span id="score-span"></span>
+              </div>
 
             </div>
 
-            <h2 class="card-title">John Wick: Chapter 3 - Parabellum</h2>
+            <h2 class="card-title" id="title-span"></h2>
           </div>
-
+        </a>
+        
         </div>
       </section>
 
@@ -118,10 +124,9 @@
   </div>  
 
   <div>
-    <a href="./pelicula.html">
       <span class="btn-footer" id="back"> << Atrás</span>
       <span class="btn-footer" id="fwd">Siguiente >> </span>
-    </a>
+
   </div>
 
 
@@ -141,9 +146,9 @@
 
           <h4 class="link-heading">Pelis en Casa</h4>
 
-          <li class="link-item"><a href="#">Sobre nosotros</a></li>
-          <li class="link-item"><a href="#">Mi cuenta</a></li>
-          <li class="link-item"><a href="#">Premiun</a></li>
+          <li class="link-item"><a href="#" class="a-fix">Sobre nosotros</a></li>
+          <li class="link-item"><a href="#" class="a-fix">Mi cuenta</a></li>
+          <li class="link-item"><a href="#" class="a-fix">Premiun</a></li>
 
 
         </ul>
@@ -152,9 +157,9 @@
 
           <h4 class="link-heading">Ayuda</h4>
 
-          <li class="link-item"><a href="#">Dispositivos compatibles</a></li>
-          <li class="link-item"><a href="#">Accesibilidad</a></li>
-          <li class="link-item"><a href="#">Contacto</a></li>
+          <li class="link-item"><a href="#" class="a-fix">Dispositivos compatibles</a></li>
+          <li class="link-item"><a href="#" class="a-fix">Accesibilidad</a></li>
+          <li class="link-item"><a href="#" class="a-fix">Contacto</a></li>
 
         </ul>
       </div>
@@ -168,8 +173,8 @@
       </div>
 
       <div class="terms-condit">
-        <a href="#">Politica de privacidad</a>
-        <a href="#">Terminos y condiciones</a>
+        <a href="#" class="a-fix">Politica de privacidad</a>
+        <a href="#" class="a-fix">Terminos y condiciones</a>
       </div>
 
     </div>
