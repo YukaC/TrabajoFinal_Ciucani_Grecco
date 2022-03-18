@@ -8,6 +8,7 @@ $( document ).ready(function() {
         contentType: "application/json; charset=utf-8"
     })
         .done(function(pelicula) {
+            $('#title-page').text("Ver " +pelicula.nombre);
             $('#p-nombre').html(pelicula.nombre);
             $('#p-año').html("Año: " + pelicula.year);
             $('#p-duracion').html("Duracion: " +pelicula.duracion);
