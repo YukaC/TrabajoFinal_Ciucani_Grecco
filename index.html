@@ -10,6 +10,7 @@
   <!--link del css-->
 
   <link rel="stylesheet" href="./assets/css/main.css">
+  <link rel="stylesheet" href="./assets/css/responsive.css">
 
   <link rel="icon" href="assets/images/logo2.png">
 
@@ -19,6 +20,7 @@
 
   <script src="assets/js/jquery-3.6.0.min.js"></script>
   <script src="assets/js/main.js"></script>
+  <script src="assets/js/banner-main.js"></script>
 
 </head>
 
@@ -28,22 +30,20 @@
 
     <!-- Header  -->
 
-    <header class="">
+    <header>
       <div class="navbar-cont">
 
-        <a href="./index.html">
-          <img src="./assets/images/logo.png" alt="" style="width: 95px; height: 95px;">
+        <a href="./index.html" class="navbar-brand">
+          <img src="./assets/images/logo.png" alt="">
         </a>
 
         <!-- navbar -->
 
-        <nav class="" style="margin-right: 35%">
-          <ul class="navbar-nav">
-
-            <li> <a href="./index.html" class="navbar-link">Inicio</a> </li>
-            <li> <a href="#categorias" class="navbar-link">Categorias</a> </li>
-
-          </ul>
+        <nav class="navbar-nav">
+          <div class="navbar-ul">
+            <span> <a href="./index.html" class="navbar-link">Inicio</a> </span>
+            <span> <a href="#categorias" class="navbar-link">Categorias</a> </span>
+          </div>
         </nav>
 
         <!-- Busqueda e inicio de sesion -->
@@ -52,17 +52,10 @@
 
           <div action="#" class="navbar">
             <input type="text" name="search" placeholder="Buscar películas..." class="navbar-search">
-
-            <button class="navbar-close">
-            
-          <!--Agregar imagen de lupa-->
-
-            </button>
           </div>
 
-          <a href="./login.html" class="navbar-signin">
+          <a href="./login.html" class="navbar-signin ">
             <span class="btn">Iniciar Sesión</span>
-          <!--Agregar imagen de sesion-->
           </a>
 
         </div>
@@ -76,31 +69,36 @@
       <!-- Banner -->
       <section class="banner">
         <div class="banner-card">
-
-          <img src="./assets/images/John-Wick-3.jpg" class="banner-img" alt="">
-
+          
+          <span id="link-film" class="">
+          
+          <img src="" class="banner-img" id="img-banner">
+        
           <div class="card-content">
             <div class="card-info">
 
-              <div class="genre">
-                <span>Acción/Suspenso</span>
+              <div class="gender">
+                <span id="gender-span"></span>
               </div>
 
               <div class="year">
-                <span>2019</span>
+                <span id="year-span"></span>
               </div>
 
               <div class="duration">
-                <span>2h 11m</span>
+                <span id="duration-span"></span>
               </div>
 
-              <div class="quality">4K</div>
+              <div class="score">
+                <span id="score-span"></span>
+              </div>
 
             </div>
 
-            <h2 class="card-title">John Wick: Chapter 3 - Parabellum</h2>
+            <h2 class="card-title" id="title-span"></h2>
           </div>
-
+        </span>
+        
         </div>
       </section>
 
@@ -113,16 +111,15 @@
         </div>
 
       </section>
-      
+
+      <div class="btn-pag-cont">
+        <span class="btn-pag"> << Atrás</span>
+        <span class="btn-pag">Siguiente >> </span>
+  
+    </div>
+
     </main>
   </div>  
-
-  <div>
-    <a href="./pelicula.html">
-      <span class="btn-footer" id="back"> << Atrás</span>
-      <span class="btn-footer" id="fwd">Siguiente >> </span>
-    </a>
-  </div>
 
 
   <!-- Footer -->
@@ -130,7 +127,6 @@
   <footer>
 
     <div class="footer-content">
-
       <div class="footer-brand">
         <img src="assets/images/logo.png" alt="" class="footer-logo">
         <p class="slogan">Peliculas Online</p>
@@ -141,9 +137,9 @@
 
           <h4 class="link-heading">Pelis en Casa</h4>
 
-          <li class="link-item"><a href="#">Sobre nosotros</a></li>
-          <li class="link-item"><a href="#">Mi cuenta</a></li>
-          <li class="link-item"><a href="#">Premiun</a></li>
+          <li class="link-item"><a href="#" class="">Sobre nosotros</a></li>
+          <li class="link-item"><a href="#" class="">Mi cuenta</a></li>
+          <li class="link-item"><a href="#" class="">Premiun</a></li>
 
 
         </ul>
@@ -152,9 +148,9 @@
 
           <h4 class="link-heading">Ayuda</h4>
 
-          <li class="link-item"><a href="#">Dispositivos compatibles</a></li>
-          <li class="link-item"><a href="#">Accesibilidad</a></li>
-          <li class="link-item"><a href="#">Contacto</a></li>
+          <li class="link-item"><a href="#" class="">Dispositivos compatibles</a></li>
+          <li class="link-item"><a href="#" class="">Accesibilidad</a></li>
+          <li class="link-item"><a href="#" class="">Contacto</a></li>
 
         </ul>
       </div>
@@ -168,8 +164,8 @@
       </div>
 
       <div class="terms-condit">
-        <a href="#">Politica de privacidad</a>
-        <a href="#">Terminos y condiciones</a>
+        <a href="#" class="">Politica de privacidad</a>
+        <a href="#" class="">Terminos y condiciones</a>
       </div>
 
     </div>
