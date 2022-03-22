@@ -227,6 +227,23 @@
             "nombe" : "Clainux",
             "contraseña" : "456"
         }
+    ],
+
+    "comentarios" : [
+        {
+            "id": 1,
+            "usuario" : "Yuka",
+            "hora" : "Hace 4 horas",
+            "texto": "Entretenida",
+            "pelicula" : 2
+        },
+        {
+            "id": 2,
+            "usuario" : "Clainux",
+            "hora" : "Hace 2 horas",
+            "texto" : "Me encanta",
+            "pelicula" : 2
+        }
     ]
     
 }

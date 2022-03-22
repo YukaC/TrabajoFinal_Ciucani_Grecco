@@ -1,4 +1,5 @@
 # Importamos la libreria Flask para crear la API
+from tokenize import Comment
 from flask import Flask, jsonify, request
 # Importamos la libreria HTTPStatus para poder usar los codigos de estado
 from http import HTTPStatus
@@ -19,9 +20,9 @@ def hello_world():
     return 'Allá te vamos netflix(?)'
 
 
-@app.route('/peliculas', methods=['GET'])
+@app.route('/ultimas-peliculas', methods=['GET'])
 def all_films():
-    peliculas = db['peliculas']
+    peliculas = db['peliculas'][-10:]
     generos = db['generos']
     directores = db['directores']
     respuesta = []
@@ -40,9 +41,9 @@ def all_films():
     return jsonify(respuesta)
 
 
-@app.route('/ultimas-peliculas', methods=['GET'])
+@app.route('/peliculas', methods=['GET'])
 def last_10():
-    return jsonify(db['peliculas'][-10:])
+    return jsonify(db['peliculas'])
 
 
 @app.route('/peliculas/<id>', methods=['GET'])
@@ -103,5 +104,30 @@ def ult_3():
 def random_last_3():
     import random
     return jsonify(db['peliculas'][-3:][random.randint(0,2)])
+
+@app.route('/comentarios', methods=['GET'])
+def comments_by_films():
+    comentarios = db['comentarios']
+    peliculas = db['peliculas']
+    respuesta = []
+    for comentario in comentarios:
+        for pelicula in peliculas:
+            if (comentario['pelicula'] == pelicula['id']):
+                comentario['pelicula'] = pelicula['nombre']
+        respuesta.append(comentario)
+    return jsonify(respuesta)
+
+@app.route('/add_comentario', methods=['POST'])
+def add_comment():
+    if not request.json:
+        HTTPStatus(400)
+    comment = {
+        'id': db['comentarios'][-1]['id'] + 1,
+        'texto': request.json['texto'],
+        'pelicula': request.json['pelicula'],
+        'usuario': request.json['usuario']
+    }
+    db['comentarios'].append(comment)
+    return jsonify(comment)
     
 app.run()

@@ -1,7 +1,7 @@
 $( document ).ready(function() {
     $.ajax({
         method: "GET",
-        url: "http://127.0.0.1:5000/peliculas",
+        url: "http://127.0.0.1:5000/ultimas-peliculas",
         headers: {  'Access-Control-Allow-Origin': '*' },
         contentType: "application/json; charset=utf-8"
     })

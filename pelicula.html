@@ -8,6 +8,7 @@
     <title id="title-page"></title>
 
     <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="stylesheet" href="./assets/css/responsive.css">
 
     <link rel="icon" href="assets/images/logo2.png">
   
@@ -15,83 +16,85 @@
 
     <script src="assets/js/jquery-3.6.0.min.js"></script>
     <script src="assets/js/film.js"></script>
+    <script src="assets/js/comments.js"></script>
 
 </head>
 <body>
   
   <div class="container">
 
-    <header class="">
-        <div class="navbar-cont">
-  
-          <a href="./index.html" class="a-fix">
-            <img src="./assets/images/logo.png" alt="" style="width: 95px; height: 95px;">
-          </a>
-  
-          <!-- navbar -->
-  
-          <nav class="" style="margin-right: 35%">
-            <ul class="navbar-nav">
-  
-              <li> <a href="./index.html" class="navbar-link a-fix">Inicio</a> </li>
-              <li> <a href="#categorias" class="navbar-link a-fix">Categorias</a> </li>
-  
-            </ul>
-          </nav>
-  
-          <!-- Busqueda e inicio de sesion -->
-  
-          <div class="navbar-actions">
-  
-            <form action="#" class="navbar">
-              <input type="text" name="search" placeholder="Buscar películas..." class="navbar-search">
-  
-              <button class="navbar-close">
-            <!--Agregar imagen de lupa-->
-              </button>
-            </form>
-  
-            <a href="#" class="navbar-signin a-fix">
-              <span class="btn">Iniciar Sesión</span>
-            <!--Agregar imagen de sesion-->
-            </a>
-  
+    <header>
+      <div class="navbar-cont">
+
+        <a href="./index.html" class="navbar-brand">
+          <img src="./assets/images/logo.png" alt="">
+        </a>
+
+        <!-- navbar -->
+
+        <nav class="navbar-nav">
+          <div class="navbar-ul">
+            <span> <a href="./index.html" class="navbar-link">Inicio</a> </span>
+            <span> <a href="#categorias" class="navbar-link">Categorias</a> </span>
           </div>
-  
+        </nav>
+
+        <!-- Busqueda e inicio de sesion -->
+
+        <div class="navbar-actions">
+
+          <div action="#" class="navbar">
+            <input type="text" name="search" placeholder="Buscar películas..." class="navbar-search">
+          </div>
+
+          <a href="./login.html" class="navbar-signin ">
+            <span class="btn">Iniciar Sesión</span>
+          </a>
+
         </div>
-      </header>
+
+      </div>
+    </header>
 
       <!--Datos de la pelicula-->
 
       <div class="movie-card-particular" id="movie-part">
 
         <img src="" class="card-img-particular" id="p-img">
-        <h1 class="movie-card-text" id="p-nombre"></h1>
-        <p class="info-film-u" id="p-sinopsis"></p>
-        <p class="info-film-u" style="margin-top: 2%;" id="p-genero"></p>
-        <p class="info-film-u" id="p-director"><br>
-        <p class="info-film-u" id="p-duracion"><br>
-        <p class="info-film-u" id="p-año"></p>
-        <p class="info-film-u" id="p-score"></p>
+          <div class="info-cont">
+            <h1 class="movie-card-text" id="p-nombre"></h1>
+            <p class="info-film-u" id="p-sinopsis"></p>
+            <p class="info-film-u" style="margin-top: 2%;" id="p-genero"></p>
+            <p class="info-film-u" id="p-director"><br>
+            <p class="info-film-u" id="p-duracion"><br>
+            <p class="info-film-u" id="p-año"></p>
+            <p class="info-film-u" id="p-score"></p>
+          </div>
         
       </div>
 
       <!--Comentarios-->
 
-      <div class="add-comments"> 
-        <h1>Comentarios</h1>
-        <form action="#" class="navbar">
-          <input type="text" name="search" placeholder="Agregar comentario" class="navbar-search">
-      </div>
+      <section class="comments-cont">
 
-      <div class="comments">
-          <div class="comment">
-            <img src="./assets/images/user.png" style="height: 13%; width: 13%;">
-            <h2 style="margin-left: 15%; margin-top: -13%;">Usuario</h2>
-            <p style="margin-left: 15%; margin-top: 2%;">prueba</p>
-          </div>
-      </div>
-    </div> 
+        <div class="add-comments"> 
+          <h1 id="comment-title">Comentarios</h1>
+          <form action="#" class="navbar-unique">
+            <input type="text" name="search" placeholder="Agregar comentario" class="movie-search-unique">
+        </div>
+
+        
+
+        <div class="comments">
+            
+          <li class="comment user-comment" id="comments-cont">
+
+            
+  
+          </li>
+
+        </div> 
+  </section>
 
 </body>
 </html>

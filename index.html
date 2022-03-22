@@ -10,6 +10,7 @@
   <!--link del css-->
 
   <link rel="stylesheet" href="./assets/css/main.css">
+  <link rel="stylesheet" href="./assets/css/responsive.css">
 
   <link rel="icon" href="assets/images/logo2.png">
 
@@ -32,19 +33,17 @@
     <header>
       <div class="navbar-cont">
 
-        <a href="./index.html" class="a-fix">
-          <img src="./assets/images/logo.png" alt="" style="width: 95px; height: 95px;">
+        <a href="./index.html" class="navbar-brand">
+          <img src="./assets/images/logo.png" alt="">
         </a>
 
         <!-- navbar -->
 
-        <nav class="" style="margin-right: 35%">
-          <ul class="navbar-nav">
-
-            <li> <a href="./index.html" class="navbar-link a-fix">Inicio</a> </li>
-            <li> <a href="#categorias" class="navbar-link a-fix">Categorias</a> </li>
-
-          </ul>
+        <nav class="navbar-nav">
+          <div class="navbar-ul">
+            <span> <a href="./index.html" class="navbar-link">Inicio</a> </span>
+            <span> <a href="#categorias" class="navbar-link">Categorias</a> </span>
+          </div>
         </nav>
 
         <!-- Busqueda e inicio de sesion -->
@@ -53,17 +52,10 @@
 
           <div action="#" class="navbar">
             <input type="text" name="search" placeholder="Buscar películas..." class="navbar-search">
-
-            <button class="navbar-close">
-            
-          <!--Agregar imagen de lupa-->
-
-            </button>
           </div>
 
-          <a href="./login.html" class="navbar-signin a-fix">
+          <a href="./login.html" class="navbar-signin ">
             <span class="btn">Iniciar Sesión</span>
-          <!--Agregar imagen de sesion-->
           </a>
 
         </div>
@@ -78,7 +70,7 @@
       <section class="banner">
         <div class="banner-card">
           
-          <a id="link-film" >
+          <span id="link-film" class="">
           
           <img src="" class="banner-img" id="img-banner">
         
@@ -105,7 +97,7 @@
 
             <h2 class="card-title" id="title-span"></h2>
           </div>
-        </a>
+        </span>
         
         </div>
       </section>
@@ -119,15 +111,15 @@
         </div>
 
       </section>
-      
+
+      <div class="btn-pag-cont">
+        <span class="btn-pag"> << Atrás</span>
+        <span class="btn-pag">Siguiente >> </span>
+  
+    </div>
+
     </main>
   </div>  
-
-  <div>
-      <span class="btn-footer" id="back"> << Atrás</span>
-      <span class="btn-footer" id="fwd">Siguiente >> </span>
-
-  </div>
 
 
   <!-- Footer -->
@@ -135,7 +127,6 @@
   <footer>
 
     <div class="footer-content">
-
       <div class="footer-brand">
         <img src="assets/images/logo.png" alt="" class="footer-logo">
         <p class="slogan">Peliculas Online</p>
@@ -146,9 +137,9 @@
 
           <h4 class="link-heading">Pelis en Casa</h4>
 
-          <li class="link-item"><a href="#" class="a-fix">Sobre nosotros</a></li>
-          <li class="link-item"><a href="#" class="a-fix">Mi cuenta</a></li>
-          <li class="link-item"><a href="#" class="a-fix">Premiun</a></li>
+          <li class="link-item"><a href="#" class="">Sobre nosotros</a></li>
+          <li class="link-item"><a href="#" class="">Mi cuenta</a></li>
+          <li class="link-item"><a href="#" class="">Premiun</a></li>
 
 
         </ul>
@@ -157,9 +148,9 @@
 
           <h4 class="link-heading">Ayuda</h4>
 
-          <li class="link-item"><a href="#" class="a-fix">Dispositivos compatibles</a></li>
-          <li class="link-item"><a href="#" class="a-fix">Accesibilidad</a></li>
-          <li class="link-item"><a href="#" class="a-fix">Contacto</a></li>
+          <li class="link-item"><a href="#" class="">Dispositivos compatibles</a></li>
+          <li class="link-item"><a href="#" class="">Accesibilidad</a></li>
+          <li class="link-item"><a href="#" class="">Contacto</a></li>
 
         </ul>
       </div>
@@ -173,8 +164,8 @@
       </div>
 
       <div class="terms-condit">
-        <a href="#" class="a-fix">Politica de privacidad</a>
-        <a href="#" class="a-fix">Terminos y condiciones</a>
+        <a href="#" class="">Politica de privacidad</a>
+        <a href="#" class="">Terminos y condiciones</a>
       </div>
 
     </div>

@@ -1,34 +1,19 @@
-* {
-  margin: 0;
-  padding: 0;
-}
+ /*-------------------------------------*\
+   #DEFAULT
+ \*-------------------------------------*/
+ 
+ /**
+  * import default.css file 
+  */
+ 
+  @import url(./default.css);
 
-
-  /* Fuente Default */
-
-html { font-family: var(--ff-inter); }
-
-/* Colores de todos los titulos */
-
-h1, h2, h3, h4, h5, h6 { color: var(--white); }
-
-/* Default background color */
-
-body {
-  background: var(--main-color);
-  color: var(--white);
-}
-
-img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  object-fit: cover;
-}
-
-.navbar,
-.banner {
+.navbar-cont,
+.banner,
+.movies-grid,
+.footer-content,
+.comments-cont,
+.movie-card-particular {
   padding: 0 var(--px);
 }
 
@@ -44,17 +29,26 @@ img {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: var(--fs-bg);
 }
- 
-.navbar-nav { 
-  display: flex;
-} 
 
-.navbar-nav li:not(:last-child) { margin-right: 60px; }
+.navbar-nav{
+  position: absolute;
+}
+
+.navbar-ul{
+  margin-left: 100px;
+  display: inline-flex;
+  float: left;
+}
+
+.navbar-ul span .navbar-link{
+  margin-left: 20px;
+}
  
 .navbar-link {
   color: var(--white);
+  font-size: var(--fs-md);
+  font-weight: var(--fw-6);
   cursor: pointer;    
 }
 
@@ -63,7 +57,8 @@ img {
 }
 
 .navbar-actions {
-  display: flex;
+  display: inline-flex;
+  margin-top: 10px;
   align-items: center;
 }
 
@@ -78,40 +73,46 @@ img {
 
 .navbar-search {
   background: var(--search-bar);
-  width: 100%;
+  width: 90%;
   padding: 12px 20px;
   border-radius: 15px;
+  margin-right: -50px;
+  margin-left: 46px;
   color: var(--main-color);
   font-size: var(--fs-sm);
+  font-weight: var(--fw-5);
 }
-
-.navbar-close,
-.navbar-search-btn { display: none; }
 
 .btn{
-  padding: 0.7rem 1.4rem;
-  background: var(--accent-color);
-  color: var(--white);
-  font-weight: 400;
+  background-color: var(--accent-color);
+  border: none;
+  color: white;
+  padding: 12px;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  font-size: var(--fs-sm);
+  cursor: pointer;
   border-radius: 20px;
 }
+
 .btn:hover{
   background: rgb(131, 37, 37);
 }
 
-.btn-footer{
+.btn-pag-cont{
+  margin-left: calc(42%);
+}
+
+.btn-pag{
   border-radius: 20px;
   padding: 0.4rem 1.0rem;
   width: 10%;
   height: 10%;
 }
 
-.btn-footer:hover{
+.btn-pag:hover{
   background: rgb(131, 37, 37);
-}
-
-#back{
-  margin-left: 45%;
 }
 
 .navbar-signin {
@@ -124,12 +125,6 @@ input, button, select {
 }
 
 li { list-style: none; }
-
-.a-fix{
-  text-decoration: none;
-  display: block;
-  color: var(--white);
-}
 
 /* Banner de Pelicula Destacada */
 
@@ -178,7 +173,7 @@ li { list-style: none; }
 
 .movies-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(215px, 1fr));
   gap: 30px;
   margin-bottom: 60px;
 }
@@ -259,7 +254,7 @@ li { list-style: none; }
 
 /* Pie de pagina */
 
-.footer {
+footer {
   background: var(--main-color);
   padding: 80px var(--px) 40px;
   margin-top: 5%;
@@ -267,17 +262,17 @@ li { list-style: none; }
 
 .footer-content {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: flex-start;
-  border-bottom: 1px solid var(--main-color);
-  padding-bottom: 30px;
-  margin-left: 34%;
-  margin-top: 7%;
-  }
+  border-bottom: 1px solid var(--accent-color);
+  padding-bottom: 80px;
+}
 
 .footer-brand {
-  max-width: 250px;
+  display: flex;
   margin-right: 130px;
+  flex-direction: column;
+  align-items: center;
 }
 
 .footer-logo {
@@ -286,23 +281,24 @@ li { list-style: none; }
 }
 
 .slogan {
-  font-size: var(--main-color);
-  line-height: 20px;
-  margin-bottom: 20px;
-  margin-left: calc(18%)
+  width: max-content;
+  font-size: var(--fs-sm);
+   line-height: 20px;
+   margin-bottom: 20px;
 }
 
 .footer-links {
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  display: flex;
   gap: 50px;
-  align-items: flex-end;
+  margin-top: 3%;
+  justify-content: center;
+  align-content: stretch;
+  align-items: center;
 }
 
 .link-heading { margin-bottom: 20px; }
 
-.link-item { font-size: var(--white); }
+.link-item { font-size: var(--fs-sm); }
 
 ul .link-item:not(:last-child) { margin-bottom: 10px; }
 
@@ -310,23 +306,24 @@ ul .link-item:not(:last-child) { margin-bottom: 10px; }
 
 .footer-copyright {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
   padding-top: 40px;
-  margin-left: 30%;
-  margin-bottom: 3%;
+}
+
+.copyright{
+  margin-right: 40px;
 }
 
 .footer-copyright p,
-.terms-condit a { font-size: var(--main-color); }
+.terms-condit a { font-size: var(--fs-sm); }
 
-.terms-condit a:hover { color: var(--white); }
+.terms-condit a:hover { color: var(--accent-color); }
 
 .terms-condit { display: flex; }
 
 .terms-condit a:not(:last-child) { margin-right: 30px; }
 
-.terms-condit {margin-right: 38%;}
 
 .movie-card-particular{
   margin-top: 3%;
@@ -334,24 +331,37 @@ ul .link-item:not(:last-child) { margin-bottom: 10px; }
 
 /*  Pelicula Especifica */
 
-.info-film-u{
-  margin-top: 1%;
-  margin-left: 20%;
+
+.movie-search-unique{
+  border-bottom: 2px solid red;
+  background: hsl(0deg 0% 49% / 80%);
+  margin-top: 20px;
+  width: 100%;
+  padding: 12px 20px;
+  border-radius: 10px;
+  color: var(--main-color);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-5);
+}
+
+.movie-card-particular {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 30px;
+}
+
+.info-cont {
+  margin-left: -40%;
 }
 
 .card-img-particular{
+  width: 60%;
   border-radius: 15px;
-  width: 17%;
-}
-
-.movie-card-text{
-  margin-left: 20%;
-  margin-top: -26%;
 }
 
 .add-comments{
   position: relative;
-  margin-top: 15%;
+  margin-top: 5%;
 }
 
 .comments{
@@ -363,9 +373,25 @@ ul .link-item:not(:last-child) { margin-bottom: 10px; }
 }
 
 .comment{
-  margin-top: 1%;
-  margin-left: 1%;
-  float: left;
+  display: flex;
+  margin-left: 20px;
+}
+
+.info{
+  margin-top: 15px;
+  margin-left: 10px;
+  color: black;
+}
+
+.avatar{
+  margin-top: 5px;
+  width: 5%;
+  min-width: 45px;
+}
+
+li .comment, .user-comment p {
+  margin: 24px 10px;
+  margin-left: 2%;
 }
 
     /* Variables */
@@ -386,4 +412,11 @@ ul .link-item:not(:last-child) { margin-bottom: 10px; }
   --fs-md:           17px;
   --fs-sm:           14px;
   --fs-x-sm:         12px;
+
+  --fw-7: 700;
+  --fw-6: 600;
+  --fw-5: 500;
+
+  --px: 80px;
+
 }
