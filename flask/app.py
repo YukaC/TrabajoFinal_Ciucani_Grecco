@@ -1,5 +1,4 @@
 # Importamos la libreria Flask para crear la API
-from tokenize import Comment
 from flask import Flask, jsonify, request
 # Importamos la libreria HTTPStatus para poder usar los codigos de estado
 from http import HTTPStatus
@@ -11,8 +10,10 @@ import json
 app = Flask(__name__)
 CORS(app)
 
-with open('db.json') as json_file:
+with open('db.json', encoding='utf-8') as json_file:
     db = json.load(json_file)
+
+logged_in = False
 
 
 @app.route('/')
@@ -105,16 +106,14 @@ def random_last_3():
     import random
     return jsonify(db['peliculas'][-3:][random.randint(0,2)])
 
-@app.route('/comentarios', methods=['GET'])
-def comments_by_films():
+@app.route('/peliculas/<id>/comentarios', methods=['GET'])
+def comments_by_films(id):
+    id = int(id)
     comentarios = db['comentarios']
-    peliculas = db['peliculas']
     respuesta = []
     for comentario in comentarios:
-        for pelicula in peliculas:
-            if (comentario['pelicula'] == pelicula['id']):
-                comentario['pelicula'] = pelicula['nombre']
-        respuesta.append(comentario)
+            if (comentario['pelicula'] == id):              
+                respuesta.append(comentario)
     return jsonify(respuesta)
 
 @app.route('/add_comentario', methods=['POST'])
@@ -129,5 +128,17 @@ def add_comment():
     }
     db['comentarios'].append(comment)
     return jsonify(comment)
+    
+@app.route('/login-user', methods=["POST"])
+def login_user(): #devolver los datos del usuario
+    data_user = request.form
+    username = data_user.get('username')
+    password = data_user.get('password')
+    for user in db['usuarios']:
+        if user['nombre'] == username and user['passw'] == password:
+            logged_in = True
+            return jsonify(logged_in), HTTPStatus.OK
+    logged_in = False
+    return jsonify(logged_in), HTTPStatus.UNAUTHORIZED
     
 app.run()

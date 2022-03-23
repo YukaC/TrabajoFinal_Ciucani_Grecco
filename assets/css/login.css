@@ -54,7 +54,7 @@ body {
     margin-bottom: 20px;
   }
   
-  .login-box #IU, .login-box #IC {
+  .login-box .log-u, .login-box .log-p {
     border: none;
     border-bottom: 1px solid var(--white);
     background: transparent;
@@ -65,7 +65,7 @@ body {
     text-align: center;
   }
   
-  .login-box #IS {
+  .login-box .log-s {
     border: none;
     outline: none;
     height: 40px;
@@ -76,7 +76,7 @@ body {
     transition: all 0.5s ease;
   }
   
-  .login-box #IS:hover {
+  .login-box .log-s:hover {
     cursor: pointer;
     background: rgb(131, 37, 37);
     color: var(--white);

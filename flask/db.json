@@ -58,7 +58,7 @@
             "director": 5,
             "director2": null,
             "score": "8.4",
-            "sinopsis": "Arrakis, tambien denominado Dune, se ha convertido en el planeta mas importante del universo. A su alrededor comienza una gigantesca lucha por el poder que culmina en una guerra interestelar."
+            "sinopsis": "Arrakis, también denominado Dune, se ha convertido en el planeta mas importante del universo. A su alrededor comienza una gigantesca lucha por el poder que culmina en una guerra interestelar."
         },
         {
             "id": 6,
@@ -220,12 +220,12 @@
         {
             "id": 1,
             "nombre" : "Yuka",
-            "contraseña" : "123"
+            "passw" : "123"
         },
         {
             "id": 2,
-            "nombe" : "Clainux",
-            "contraseña" : "456"
+            "nombre" : "Clainux",
+            "passw" : "456"
         }
     ],
 
@@ -243,6 +243,13 @@
             "hora" : "Hace 2 horas",
             "texto" : "Me encanta",
             "pelicula" : 2
+        },
+        {
+            "id": 3,
+            "usuario" : "Clainux",
+            "hora" : "Hace 2 horas",
+            "texto" : "Le gustó a mi hijo",
+            "pelicula" : 5
         }
     ]
     
