@@ -1,4 +1,5 @@
 # Importamos la libreria Flask para crear la API
+from string import punctuation
 from flask import Flask, jsonify, request
 # Importamos la libreria HTTPStatus para poder usar los codigos de estado
 from http import HTTPStatus
@@ -10,11 +11,10 @@ import json
 app = Flask(__name__)
 CORS(app)
 
-with open('db.json', encoding='utf-8') as json_file:
-    db = json.load(json_file)
-
 logged_in = False
 
+with open('db.json', encoding='utf-8') as json_file:
+    db = json.load(json_file)
 
 @app.route('/')
 def hello_world():
@@ -23,29 +23,26 @@ def hello_world():
 
 @app.route('/ultimas-peliculas', methods=['GET'])
 def all_films():
-    peliculas = db['peliculas'][-10:]
-    generos = db['generos']
-    directores = db['directores']
-    respuesta = []
-    for pelicula in peliculas:
-        for genero in generos:
-            if (pelicula['genero'] == genero['id']):
-                pelicula['genero'] = genero['nombre']
-            if (pelicula['genero2'] == genero['id']):
-                pelicula['genero2'] = genero['nombre']
-        for director in directores:
-            if (pelicula['director'] == director['id']):
-                pelicula['director'] = director['nombre']
-            if (pelicula['director2'] == director['id']):
-                pelicula['director2'] = director['nombre']
-        respuesta.append(pelicula)
-    return jsonify(respuesta)
-
-
-@app.route('/peliculas', methods=['GET'])
-def last_10():
-    return jsonify(db['peliculas'])
-
+    if logged_in == True:
+        return jsonify(db['peliculas'])     
+    else :
+        peliculas = db['peliculas'][-10:]
+        generos = db['generos']
+        directores = db['directores']
+        respuesta = []
+        for pelicula in peliculas:
+            for genero in generos:
+                if (pelicula['genero'] == genero['id']):
+                    pelicula['genero'] = genero['nombre']
+                if (pelicula['genero2'] == genero['id']):
+                    pelicula['genero2'] = genero['nombre']
+            for director in directores:
+                if (pelicula['director'] == director['id']):
+                    pelicula['director'] = director['nombre']
+                if (pelicula['director2'] == director['id']):
+                    pelicula['director2'] = director['nombre']
+            respuesta.append(pelicula)
+        return jsonify(respuesta)
 
 @app.route('/peliculas/<id>', methods=['GET'])
 def films_by_id(id):
@@ -116,29 +113,49 @@ def comments_by_films(id):
                 respuesta.append(comentario)
     return jsonify(respuesta)
 
-@app.route('/add_comentario', methods=['POST'])
-def add_comment():
-    if not request.json:
-        HTTPStatus(400)
-    comment = {
-        'id': db['comentarios'][-1]['id'] + 1,
-        'texto': request.json['texto'],
-        'pelicula': request.json['pelicula'],
-        'usuario': request.json['usuario']
-    }
-    db['comentarios'].append(comment)
-    return jsonify(comment)
-    
 @app.route('/login-user', methods=["POST"])
 def login_user(): #devolver los datos del usuario
+    global logged_in
     data_user = request.form
     username = data_user.get('username')
     password = data_user.get('password')
     for user in db['usuarios']:
         if user['nombre'] == username and user['passw'] == password:
             logged_in = True
-            return jsonify(logged_in), HTTPStatus.OK
-    logged_in = False
+            return jsonify(logged_in), HTTPStatus.OK       
     return jsonify(logged_in), HTTPStatus.UNAUTHORIZED
+
+@app.route('/subir-pelicula', methods=["POST"])
+def add_film():
+    data_user = request.form
+    
+    nombre_pelicula = data_user.get('nombre_pelicula')
+    sinopsis = data_user.get('sinopsis')
+    genero = data_user.get('genero')
+    genero2 = data_user.get('genero2')
+    director = data_user.get('director')
+    director2 = data_user.get('director2')
+    duracion = data_user.get('duracion')
+    year = data_user.get('year')
+    score = data_user.get('score')
+    
+    for film in db['peliculas']:
+        if film['nombre'] == nombre_pelicula:
+            return jsonify(False), HTTPStatus.CONFLICT
+        else :
+            pelicula = {
+                'id': len(db['peliculas']) + 1,
+                'nombre': nombre_pelicula,
+                'sinopsis': sinopsis,
+                'genero': genero,
+                'genero2': genero2,
+                'director': director,
+                'director2': director2,
+                'duracion': duracion,
+                'year': year,
+                'score': score,
+            }
+            db['peliculas'].append(pelicula)
+            return jsonify(db['peliculas']), HTTPStatus.OK
     
 app.run()

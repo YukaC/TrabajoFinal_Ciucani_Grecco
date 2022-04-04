@@ -14,10 +14,13 @@ $( document ).ready(function() {
                 password: password
             }
         })
-            .done(function(user) {  
+            .done(function(user) { 
+                sessionStorage.setItem("logged_In", true); 
                 alert ("Bienvenido ");
+                window.location = './index.html';
             })
             .fail(function(error) {
+                sessionStorage.setItem("logged_In", false);
                 alert ("Usuario o contraseña incorrectos");
             })
             .always(function() {
