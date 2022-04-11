@@ -61,9 +61,36 @@
 
 }
 
+/* RESPONSIVE 940px */
+
+@media screen and (max-width: 945px) {
+
+  .navbar{
+    margin-right: 25px;
+  }
+
+  .navbar-ul {   /*  ocultar navbar  */
+  display: none;
+  }
+  .navbar-search {   /*  redimensionar input de busqueda  */
+  width: 90%;
+  margin-left: 20px;
+  margin-right: 0px;
+  }
+  .navbar-button-upload{
+    margin: 10px;
+  }
+
+}
+
+
 /* RESPONSIVE 768px */
 
   @media screen and (max-width: 768px) {
+
+    .logo{
+      width: 70px;
+    }
 
   /*  NAVBAR  */
 
@@ -99,7 +126,25 @@
 /* RESPONSIVE 590px */
 
   @media screen and (max-width: 590px) {
-  
+
+    .navbar-cont,
+    .banner,
+    .movies-grid,
+    .footer-content,
+    .comments-cont,
+    .movie-card-particular {
+      padding: 15px;
+    }
+    
+    .card-img-particular{
+      width: 110px;
+      margin-right: 50px;
+    }
+
+    .navbar-cont{
+      justify-content: space-around;
+    }
+
   /*  PELICULAS  */
 
   .movies-grid {  /*  ajuste de grid de peliculas  */
@@ -109,6 +154,20 @@
 
   .movie-card .card-head {  /*  ajuste de titulo de pelicula  */
   width: 100%;
+  }
+
+  .navbar-search{
+    font-size: var(--fs-x-sm);
+  }
+
+  .logo{
+    width: 70px;
+  }
+
+  .navbar-actions .btn{
+    font-size: var(--fs-x-sm);
+    padding: 6px;
+    width: 60px;
   }
 
   .btn-pag-cont{   /* centrado de botones */

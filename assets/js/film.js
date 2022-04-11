@@ -1,4 +1,11 @@
 $( document ).ready(function() {
+    if (sessionStorage.getItem("logged_In") == "true"){
+        $("#edit-button").show();
+    }
+    else{
+        $("#edit-button").hide();
+        $(".navbar").show();
+    }
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
     $.ajax({

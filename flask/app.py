@@ -1,5 +1,5 @@
 # Importamos la libreria Flask para crear la API
-from string import punctuation
+from re import A
 from flask import Flask, jsonify, request
 # Importamos la libreria HTTPStatus para poder usar los codigos de estado
 from http import HTTPStatus
@@ -11,8 +11,6 @@ import json
 app = Flask(__name__)
 CORS(app)
 
-logged_in = False
-
 with open('db.json', encoding='utf-8') as json_file:
     db = json.load(json_file)
 
@@ -20,12 +18,28 @@ with open('db.json', encoding='utf-8') as json_file:
 def hello_world():
     return 'Allá te vamos netflix(?)'
 
+@app.route('/peliculas', methods=['GET'])
+def allfilms():
+    peliculas = db['peliculas']
+    generos = db['generos']
+    directores = db['directores']
+    respuesta = []
+    for pelicula in peliculas:
+        for genero in generos:
+            if (pelicula['genero'] == genero['id']):
+                pelicula['genero'] = genero['nombre']
+            if (pelicula['genero2'] == genero['id']):
+                pelicula['genero2'] = genero['nombre']
+        for director in directores:
+            if (pelicula['director'] == director['id']):
+                pelicula['director'] = director['nombre']
+            if (pelicula['director2'] == director['id']):
+                pelicula['director2'] = director['nombre']
+        respuesta.append(pelicula)
+    return jsonify(respuesta)
 
 @app.route('/ultimas-peliculas', methods=['GET'])
-def all_films():
-    if logged_in == True:
-        return jsonify(db['peliculas'])     
-    else :
+def last10():
         peliculas = db['peliculas'][-10:]
         generos = db['generos']
         directores = db['directores']
@@ -115,15 +129,13 @@ def comments_by_films(id):
 
 @app.route('/login-user', methods=["POST"])
 def login_user(): #devolver los datos del usuario
-    global logged_in
     data_user = request.form
     username = data_user.get('username')
     password = data_user.get('password')
     for user in db['usuarios']:
         if user['nombre'] == username and user['passw'] == password:
-            logged_in = True
-            return jsonify(logged_in), HTTPStatus.OK       
-    return jsonify(logged_in), HTTPStatus.UNAUTHORIZED
+            return jsonify(HTTPStatus.OK)
+    return jsonify( HTTPStatus.UNAUTHORIZED)
 
 @app.route('/subir-pelicula', methods=["POST"])
 def add_film():

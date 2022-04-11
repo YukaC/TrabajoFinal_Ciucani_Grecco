@@ -20,6 +20,7 @@
 
   <script src="assets/js/jquery-3.6.0.min.js"></script>
   <script src="assets/js/main.js"></script>
+  <script src="assets/js/navbar.js"></script>
   <script src="assets/js/banner-main.js"></script>
 
 </head>
@@ -34,7 +35,7 @@
       <div class="navbar-cont">
 
         <a href="./index.html" class="navbar-brand">
-          <img src="./assets/images/logo.png" alt="">
+          <img src="./assets/images/logo.png" class="logo">
         </a>
 
         <!-- navbar -->
@@ -54,8 +55,16 @@
             <input type="text" name="search" placeholder="Buscar películas..." class="navbar-search">
           </div>
 
-          <a href="./login.html" class="navbar-signin ">
-            <span class="btn">Iniciar Sesión</span>
+          <a href="./add-film.html" >
+            <span class="btn navbar-button-upload" id="upload-button">Subir Pelicula</span>
+          </a>
+
+          <a href="./login.html" class="navbar-button ">
+            <span class="btn" id="login-button">Iniciar Sesión</span>
+          </a>
+
+          <a class="navbar-button ">
+            <span class="btn" id="logout-button">Cerrar Sesión</span>
           </a>
 
         </div>
@@ -70,7 +79,7 @@
       <section class="banner">
         <div class="banner-card">
           
-          <span id="link-film" class="">
+          <a id="link-film" class="" href="#">
           
           <img src="" class="banner-img" id="img-banner">
         
@@ -97,7 +106,7 @@
 
             <h2 class="card-title" id="title-span"></h2>
           </div>
-        </span>
+        </a>
         
         </div>
       </section>

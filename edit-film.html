@@ -16,6 +16,7 @@
     <link href="https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900" rel="stylesheet" />
 
     <script src="assets/js/jquery-3.6.0.min.js"></script>
+    <script src="assets/js/navbar.js"></script>
     <script src="assets/js/edit-film.js"></script>
 
 </head>
@@ -27,7 +28,7 @@
       <div class="navbar-cont">
 
         <a href="./index.html" class="navbar-brand">
-          <img src="./assets/images/logo.png" alt="">
+          <img src="./assets/images/logo.png" class="logo">
         </a>
 
         <!-- navbar -->
@@ -47,8 +48,16 @@
             <input type="text" name="search" placeholder="Buscar películas..." class="navbar-search">
           </div>
 
-          <a href="./login.html" class="navbar-signin ">
-            <span class="btn">Iniciar Sesión</span>
+          <a href="./add-film.html" >
+            <span class="btn navbar-button-upload" id="upload-button">Subir Pelicula</span>
+          </a>
+
+          <a href="./login.html" class="navbar-button ">
+            <span class="btn" id="login-button">Iniciar Sesión</span>
+          </a>
+
+          <a class="navbar-button ">
+            <span class="btn" id="logout-button">Cerrar Sesión</span>
           </a>
 
         </div>
@@ -61,7 +70,7 @@
       <div class="movie-card-particular" id="movie-part">
 
           <div class="cont-add-data"> 
-            <h1 class="spacing">Datos de la Pelicula</h1>
+            <h1 class="spacing">Editar Datos de la Pelicula</h1>
             <form class="navbar-unique" id="film-form">
               
               <label for="film-img">Elige la portada de la pelicula</label>
@@ -70,14 +79,14 @@
               <label for="film-img-banner">Elige el banner de la pelicula</label>
               <input type="file" id="film-img-banner" name="film-img-banner" accept=".jpg, .jpeg, .png">
               
-              <input type="text" placeholder="Nombre de la Pelicula" class="add-film-text-input" id="add-nombre-pelicula">
-              <input type="text" placeholder="Sinopsis" class="add-film-text-input" id="add-sinopsis">
-              <input type="text" placeholder="Genero" class="add-film-text-input" id="add-genero">
-              <input type="text" placeholder="Director" class="add-film-text-input" id="add-director">
-              <input type="text" placeholder="Duración" class="add-film-text-input" id="add-duracion">
-              <input type="number" placeholder="Año" class="add-film-text-input" id="add-year">
-              <input type="text" placeholder="Puntuación" class="add-film-text-input" id="add-score">
-              <a class="navbar-signin ">
+              <input type="text" placeholder="Nombre de la Pelicula" class="add-film-text-input" id="edit-nombre-pelicula">
+              <input type="text" placeholder="Sinopsis" class="add-film-text-input" id="edit-sinopsis">
+              <input type="text" placeholder="Genero" class="add-film-text-input" id="edit-genero">
+              <input type="text" placeholder="Director" class="add-film-text-input" id="edit-director">
+              <input type="text" placeholder="Duración" class="add-film-text-input" id="edit-duracion">
+              <input type="number" placeholder="Año" class="add-film-text-input" id="edit-year">
+              <input type="text" placeholder="Puntuación" class="add-film-text-input" id="edit-score">
+              <a class="submit-film">
                 <input type="submit" value="Editar Pelicula" class="log-s btn">
               </a>
               

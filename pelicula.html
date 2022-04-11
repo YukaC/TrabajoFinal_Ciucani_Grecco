@@ -9,12 +9,14 @@
 
     <link rel="stylesheet" href="./assets/css/main.css">
     <link rel="stylesheet" href="./assets/css/responsive.css">
+    <link rel="stylesheet" href="./assets/css/fix-specific-film.css">
 
     <link rel="icon" href="assets/images/logo2.png">
   
     <link href="https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900" rel="stylesheet" />
 
     <script src="assets/js/jquery-3.6.0.min.js"></script>
+    <script src="assets/js/navbar.js"></script>
     <script src="assets/js/film.js"></script>
     <script src="assets/js/comments.js"></script>
 
@@ -27,7 +29,7 @@
       <div class="navbar-cont">
 
         <a href="./index.html" class="navbar-brand">
-          <img src="./assets/images/logo.png" alt="">
+          <img src="./assets/images/logo.png" class="logo">
         </a>
 
         <!-- navbar -->
@@ -47,8 +49,20 @@
             <input type="text" name="search" placeholder="Buscar películas..." class="navbar-search">
           </div>
 
-          <a href="./login.html" class="navbar-signin ">
-            <span class="btn">Iniciar Sesión</span>
+          <a href="./edit-film.html" >
+            <span class="btn navbar-button-edit" id="edit-button">Editar Pelicula</span>
+          </a>
+
+          <a href="./add-film.html" >
+            <span class="btn navbar-button-upload" id="upload-button">Subir Pelicula</span>
+          </a>
+
+          <a href="./login.html" class="navbar-button ">
+            <span class="btn" id="login-button">Iniciar Sesión</span>
+          </a>
+
+          <a class="navbar-button ">
+            <span class="btn" id="logout-button">Cerrar Sesión</span>
           </a>
 
         </div>

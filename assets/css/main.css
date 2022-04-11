@@ -87,6 +87,7 @@
   background-color: var(--accent-color);
   border: none;
   color: white;
+  width: 120px;
   padding: 12px;
   text-align: center;
   text-decoration: none;
@@ -115,9 +116,19 @@
   background: rgb(131, 37, 37);
 }
 
-.navbar-signin {
+.navbar-button {
   display: flex;
   align-items: center;
+}
+
+.navbar-button-upload {
+  display: flex;
+  align-items: center;
+  margin: 20px;
+}
+
+.navbar-button-edit {
+  margin: 20px;
 }
 
 input, button, select {
