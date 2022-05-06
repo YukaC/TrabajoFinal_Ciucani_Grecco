@@ -75,13 +75,61 @@
               <label for="film-img-banner">Elige el banner de la pelicula</label>
               <input type="file" id="film-img-banner" name="film-img-banner" accept=".jpg, .jpeg, .png">
               
-              <input type="text" placeholder="Nombre de la Pelicula" class="add-film-text-input" id="add-nombre-pelicula">
-              <input type="text" placeholder="Sinopsis" class="add-film-text-input" id="add-sinopsis">
-              <input type="text" placeholder="Genero" class="add-film-text-input" id="add-genero">
-              <input type="text" placeholder="Director" class="add-film-text-input" id="add-director">
-              <input type="text" placeholder="Duración" class="add-film-text-input" id="add-duracion">
-              <input type="number" placeholder="Año" class="add-film-text-input" id="add-year">
-              <input type="text" placeholder="Puntuación" class="add-film-text-input" id="add-score">
+              <input type="text" placeholder="Nombre de la Pelicula" class="add-film-text-input" id="add-nombre-pelicula" required>
+              <input type="text" placeholder="Sinopsis" class="add-film-text-input" id="add-sinopsis" required>
+              <select id="add-genero" class="add-film-text-input" required>
+                <option value="" selected disabled hidden>Elija Primer Genero</option>
+                <option value="1">Acción</option>
+                <option value="2">Suspenso</option>
+                <option value="3">Aventura</option>
+                <option value="4">Ciencia Ficción</option>
+                <option value="5">Musical</option>
+                <option value="6">Comedia</option>
+                <option value="7">Fantasía</option>
+              </select>
+              <select id="add-genero2" class="add-film-text-input" required>
+                <option value="" selected disabled hidden>Elija Segundo Genero</option>
+                <option value="1">Acción</option>
+                <option value="2">Suspenso</option>
+                <option value="3">Aventura</option>
+                <option value="4">Ciencia Ficción</option>
+                <option value="5">Musical</option>
+                <option value="6">Comedia</option>
+                <option value="7">Fantasía</option>
+              </select>
+              <select id="add-director" class="add-film-text-input" required>
+                <option value="" selected disabled hidden>Elija Primer Director</option>
+                <option value="1">Chad Stahelski</option>
+                <option value="2">Jon Watts</option>
+                <option value="3">Lana Wachowski</option>
+                <option value="4">Chloe Zhao</option>
+                <option value="5">Denis Villeneuve</option>
+                <option value="6">Byron Howard</option>
+                <option value="7">Jared Bush</option>
+                <option value="8">Destin Daniel Cretton</option>
+                <option value="9">Ruben Fleischer</option>
+                <option value="10">Anthony Russo</option>
+                <option value="11">Joe Russo</option>
+                <option value="12">Matt Reeves</option>
+              </select>
+              <select id="add-director2" class="add-film-text-input">
+                <option value="" selected disabled hidden>Elija Segundo Director (No Obligatorio)</option>
+                <option value="1">Chad Stahelski</option>
+                <option value="2">Jon Watts</option>
+                <option value="3">Lana Wachowski</option>
+                <option value="4">Chloe Zhao</option>
+                <option value="5">Denis Villeneuve</option>
+                <option value="6">Byron Howard</option>
+                <option value="7">Jared Bush</option>
+                <option value="8">Destin Daniel Cretton</option>
+                <option value="9">Ruben Fleischer</option>
+                <option value="10">Anthony Russo</option>
+                <option value="11">Joe Russo</option>
+                <option value="12">Matt Reeves</option>
+              </select>
+              <input type="text" placeholder="Duración" class="add-film-text-input" id="add-duracion" required>
+              <input type="number" placeholder="Año" class="add-film-text-input" id="add-year" required>
+              <input type="text" placeholder="Puntuación" class="add-film-text-input" id="add-score" required>
               <a class="navbar-signin ">
                 <input type="submit" value="Subir Pelicula" class="log-s btn">
               </a>

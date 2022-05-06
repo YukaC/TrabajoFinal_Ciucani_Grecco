@@ -205,4 +205,31 @@ def delete_film(id):
             return jsonify(pelicula), HTTPStatus.OK
     return HTTPStatus.NOT_FOUND
     
+@app.route('/subir-comentario', methods=["POST"])
+def add_comment():
+    data_user = request.form
+    film_id = data_user.get('film_id')
+    comentario = data_user.get('comment')
+    usuario = data_user.get('username')
+    fecha = data_user.get('comment_date')
+    for pelicula in db['peliculas']:
+        if pelicula['id'] == int(film_id):
+            comentario = {
+                'id': len(db['comentarios']) + 1,
+                'pelicula': int(film_id),
+                'texto': comentario,
+                'usuario': usuario,
+                'hora': fecha,
+            }
+            db['comentarios'].append(comentario)
+            return jsonify(comentario), HTTPStatus.OK
+    
+@app.route('/buscar', methods=["GET"])
+def search():
+    respuesta = []
+    for pelicula in db['peliculas']:
+        if pelicula['nombre'].lower().find(request.args.get('input').lower()) != -1:
+            respuesta.append(pelicula)
+    return jsonify(respuesta)
+      
 app.run()
