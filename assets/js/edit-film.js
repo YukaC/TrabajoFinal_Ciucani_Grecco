@@ -9,33 +9,32 @@ $( document ).ready(function() {
         contentType: "application/json; charset=utf-8"
     })
         .done(function(pelicula) {
-            $("#add-sinopsis").val(pelicula.sinopsis);
-            $("#add-nombre-pelicula").val(pelicula.nombre);
-            $("#add-genero").val(pelicula.genero);
-            $("#add-director").val(pelicula.director);
-            $("#add-duracion").val(pelicula.duracion);
-            $("#add-year").val(pelicula.year);
-            $("#add-score").val(pelicula.score);
-
-
+            $("#edit-sinopsis").val(pelicula.sinopsis);
+            $("#edit-nombre-pelicula").val(pelicula.nombre);
+            $("#edit-genero").val(pelicula.genero);
+            $("#edit-genero2").val(pelicula.genero2);
+            $("#edit-director").val(pelicula.director);
+            $("#edit-director2").val(pelicula.director2);
+            $("#edit-duracion").val(pelicula.duracion);
+            $("#edit-year").val(pelicula.year);
+            $("#edit-score").val(pelicula.score);
         });
 
         $("#film-form").submit(function(event) {
             event.preventDefault();
-            alert ("ejecuta");
-            const nombre_pelicula = $("#add-nombre-pelicula").val();
-            const sinopsis = $("#add-sinopsis").val();
-            const genero = $("#add-genero").val();
-            const genero2 = $("#add-genero2").val();
-            const director = $("#add-director").val();
-            const director2 = $("#add-director2").val();
-            const duracion = $("#add-duracion").val();
-            const year = $("#add-year").val();
-            const score = $("#add-score").val();
+            const nombre_pelicula = $("#edit-nombre-pelicula").val();
+            const sinopsis = $("#edit-sinopsis").val();
+            const genero = $("#edit-genero").val();
+            const genero2 = $("#edit-genero2").val();
+            const director = $("#edit-director").val();
+            const director2 = $("#edit-director2").val();
+            const duracion = $("#edit-duracion").val();
+            const year = $("#edit-year").val();
+            const score = $("#edit-score").val();
     
             $.ajax({
                 type: "POST",
-                url: "http://127.0.0.1:5000/editar-pelicula+"+urlParams.get('id'),
+                url: "http://127.0.0.1:5000/editar-pelicula/"+urlParams.get('id'),
                 headers: {  'Access-Control-Allow-Origin': '*', 'Accept': 'application/json' },
                 contentType: "application/x-www-form-urlencoded; charset=UTF-8",
                 dataType: "json",
@@ -62,5 +61,4 @@ $( document ).ready(function() {
                 });
     
         });
-
-    });
+});

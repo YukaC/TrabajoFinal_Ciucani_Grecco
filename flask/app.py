@@ -1,5 +1,4 @@
 # Importamos la libreria Flask para crear la API
-from re import A
 from flask import Flask, jsonify, request
 # Importamos la libreria HTTPStatus para poder usar los codigos de estado
 from http import HTTPStatus
@@ -37,6 +36,7 @@ def allfilms():
                 pelicula['director2'] = director['nombre']
         respuesta.append(pelicula)
     return jsonify(respuesta)
+    # return jsonify(request.args.get('director'))
 
 @app.route('/ultimas-peliculas', methods=['GET'])
 def last10():
@@ -66,12 +66,12 @@ def films_by_id(id):
                 return jsonify(pelicula)
             
 
-@app.route("/director/<id>", methods=['GET'])
-def all_films_by_director(id):
+@app.route('/director/<id>', methods=['GET'])
+def allfilmsbydirector(id):
     id = int(id)
     peliculas_by_dir = []
     for pelicula in db['peliculas']:
-        if (pelicula['director'] == id or pelicula['director2'] == id):
+         if (pelicula['director'] == id or pelicula['director2'] == id):
             peliculas_by_dir.append(pelicula)
     return jsonify(peliculas_by_dir)
 
@@ -108,10 +108,6 @@ def alldirectors():
 def allgenders():
     return jsonify(db['generos'])
 
-@app.route('/ult3', methods=['GET'])
-def ult_3():
-    return jsonify(db['peliculas'][-3:])
-
 @app.route('/random', methods=['GET'])
 def random_last_3():
     import random
@@ -134,8 +130,8 @@ def login_user(): #devolver los datos del usuario
     password = data_user.get('password')
     for user in db['usuarios']:
         if user['nombre'] == username and user['passw'] == password:
-            return jsonify(HTTPStatus.OK)
-    return jsonify( HTTPStatus.UNAUTHORIZED)
+            return jsonify("loggedIn"),HTTPStatus.OK
+    return ("LoggedOut"),HTTPStatus.UNAUTHORIZED
 
 @app.route('/subir-pelicula', methods=["POST"])
 def add_film():
@@ -159,15 +155,54 @@ def add_film():
                 'id': len(db['peliculas']) + 1,
                 'nombre': nombre_pelicula,
                 'sinopsis': sinopsis,
-                'genero': genero,
-                'genero2': genero2,
-                'director': director,
-                'director2': director2,
+                'genero': int(genero),
+                'genero2': int(genero2),
+                'director': int(director),
+                'director2': int(director2),
                 'duracion': duracion,
                 'year': year,
                 'score': score,
+                'img': 'img_default.jpg',
             }
             db['peliculas'].append(pelicula)
             return jsonify(db['peliculas']), HTTPStatus.OK
+        
+@app.route('/editar-pelicula/<id>', methods=["POST"])
+def edit_film(id):
+    data = request.form
+    nombre_pelicula = data.get('nombre_pelicula')
+    sinopsis = data.get('sinopsis')
+    genero = data.get('genero')
+    genero2 = data.get('genero2')
+    director = data.get('director')
+    director2 = data.get('director2')
+    duracion = data.get('duracion')
+    year = data.get('year')
+    score = data.get('score')
+    
+    for pelicula in db['peliculas']:
+        if pelicula['id'] == int(id):
+            pelicula['nombre'] = nombre_pelicula
+            pelicula['sinopsis'] = sinopsis
+            pelicula['genero'] = genero
+            pelicula['genero2'] = genero2
+            pelicula['director'] = director
+            pelicula['director2'] = director2
+            pelicula['duracion'] = duracion
+            pelicula['year'] = year
+            pelicula['score'] = score
+            return jsonify(pelicula), HTTPStatus.OK
+    return HTTPStatus.NOT_FOUND
+        
+@app.route('/eliminar-pelicula/<id>', methods=["DELETE"])
+def delete_film(id):
+    for pelicula in db['peliculas']:
+        if pelicula['id'] == int(id):
+            for comentario in db['comentarios']:
+                if comentario['pelicula'] == pelicula['id']:
+                    return HTTPStatus.CONFLICT
+            db['peliculas'].remove(pelicula)
+            return jsonify(pelicula), HTTPStatus.OK
+    return HTTPStatus.NOT_FOUND
     
 app.run()

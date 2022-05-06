@@ -30,5 +30,6 @@ $( document ).ready(function() {
             $('#p-score').html("Puntuación: " + pelicula.score);
             $('#p-img').attr('src','http://127.0.0.1:5000/static/'+pelicula.id+'.jpg') 
 
+            $('#edit-button-link').attr('href','edit-film.html?id='+pelicula.id);
         });
     });

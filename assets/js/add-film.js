@@ -2,7 +2,6 @@ $( document ).ready(function() {
     $('#title-page').text("Subir Pelicula");
     $("#film-form").submit(function(event) {
         event.preventDefault();
-        alert ("ejecuta");
         const nombre_pelicula = $("#add-nombre-pelicula").val();
         const sinopsis = $("#add-sinopsis").val();
         const genero = $("#add-genero").val();

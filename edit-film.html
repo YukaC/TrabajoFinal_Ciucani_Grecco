@@ -45,7 +45,7 @@
         <div class="navbar-actions">
 
           <div action="#" class="navbar">
-            <input type="text" name="search" placeholder="Buscar películas..." class="navbar-search">
+            <input type="text" name="search" placeholder="Buscar películas..." class="navbar-search" autocomplete="off">
           </div>
 
           <a href="./add-film.html" >
@@ -71,7 +71,7 @@
 
           <div class="cont-add-data"> 
             <h1 class="spacing">Editar Datos de la Pelicula</h1>
-            <form class="navbar-unique" id="film-form">
+            <form class="navbar-unique" id="film-form" autocomplete="off">
               
               <label for="film-img">Elige la portada de la pelicula</label>
               <input type="file" id="film-img" name="film-img" accept=".jpg, .jpeg, .png" class="spacing">
@@ -79,13 +79,15 @@
               <label for="film-img-banner">Elige el banner de la pelicula</label>
               <input type="file" id="film-img-banner" name="film-img-banner" accept=".jpg, .jpeg, .png">
               
-              <input type="text" placeholder="Nombre de la Pelicula" class="add-film-text-input" id="edit-nombre-pelicula">
-              <input type="text" placeholder="Sinopsis" class="add-film-text-input" id="edit-sinopsis">
-              <input type="text" placeholder="Genero" class="add-film-text-input" id="edit-genero">
-              <input type="text" placeholder="Director" class="add-film-text-input" id="edit-director">
-              <input type="text" placeholder="Duración" class="add-film-text-input" id="edit-duracion">
-              <input type="number" placeholder="Año" class="add-film-text-input" id="edit-year">
-              <input type="text" placeholder="Puntuación" class="add-film-text-input" id="edit-score">
+              <input type="text" placeholder="Nombre de la Pelicula" class="add-film-text-input" id="edit-nombre-pelicula" required>
+              <input type="text" placeholder="Sinopsis" class="add-film-text-input" id="edit-sinopsis" required>
+              <input type="text" placeholder="Primer Genero" class="add-film-text-input" id="edit-genero" required>
+              <input type="text" placeholder="Segundo Genero" class="add-film-text-input" id="edit-genero2" required>
+              <input type="text" placeholder="Primer Director" class="add-film-text-input" id="edit-director" required>
+              <input type="text" placeholder="Segundo Director (No Obligatorio)" class="add-film-text-input" id="edit-director2">
+              <input type="text" placeholder="Duración" class="add-film-text-input" id="edit-duracion" required>
+              <input type="number" placeholder="Año" class="add-film-text-input" id="edit-year" required>
+              <input type="number" placeholder="Puntuación (1-10)" step="0.1" min="0" max="10" class="add-film-text-input" id="edit-score" required>
               <a class="submit-film">
                 <input type="submit" value="Editar Pelicula" class="log-s btn">
               </a>

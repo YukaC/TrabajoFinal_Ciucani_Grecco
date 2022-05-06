@@ -12,13 +12,13 @@ $( document ).ready(function() {
     })
 
     .done(function(peliculas) {
-            
+      $('#movies-grid').html('');
       $.each(peliculas, function(index, pelicula) {
           $('#movies-grid').append('\
           <div class="movie-card">\
           <div class="card-head">\
             <a href="./pelicula.html?id='+pelicula.id+'">\
-            <img src="http://127.0.0.1:5000/static/'+pelicula.id+'.jpg" alt="" class="card-img">\
+            <img src="http://127.0.0.1:5000/static/'+pelicula.img+'" alt="" class="card-img" id="img-movie">\
             <div class="card-overlay">\
               <div class="rating">\
                 <img src= "assets/images/star.png">\
