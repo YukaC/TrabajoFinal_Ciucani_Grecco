@@ -16,7 +16,8 @@
     <link href="https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900" rel="stylesheet" />
 
     <script src="assets/js/jquery-3.6.0.min.js"></script>
-    <script src="assets/js/navbar.js"></script>
+    <script src="assets/js/login-check.js"></script>
+    <script src="assets/js/log-out.js"></script>
     <script src="assets/js/add-film.js"></script>
 
 </head>
@@ -36,17 +37,13 @@
         <nav class="navbar-nav">
           <div class="navbar-ul">
             <span> <a href="./index.html" class="navbar-link">Inicio</a> </span>
-            <span> <a href="#categorias" class="navbar-link">Categorias</a> </span>
+            <span id="cat_sp"> <a href="#categorias" class="navbar-link">Categorias</a> </span>
           </div>
         </nav>
 
         <!-- Busqueda e inicio de sesion -->
 
         <div class="navbar-actions">
-
-          <div action="#" class="navbar">
-            <input type="text" name="search" placeholder="Buscar películas..." class="navbar-search" autocomplete="off">
-          </div>
 
           <a href="./login.html" class="navbar-button ">
             <span class="btn" id="login-button">Iniciar Sesión</span>

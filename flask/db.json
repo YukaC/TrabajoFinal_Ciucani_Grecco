@@ -233,21 +233,21 @@
         {
             "id": 1,
             "usuario" : "Yuka",
-            "hora" : "Hace 4 horas",
+            "hora" : "20/04/2022",
             "texto": "Entretenida",
             "pelicula" : 2
         },
         {
             "id": 2,
             "usuario" : "Clainux",
-            "hora" : "Hace 2 horas",
+            "hora" : "14/03/2022",
             "texto" : "Me encanta",
             "pelicula" : 2
         },
         {
             "id": 3,
             "usuario" : "Clainux",
-            "hora" : "Hace 2 horas",
+            "hora" : "05/02/2022",
             "texto" : "Le gustó a mi hijo",
             "pelicula" : 5
         }

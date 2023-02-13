@@ -16,14 +16,15 @@
     <link href="https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900" rel="stylesheet" />
 
     <script src="assets/js/jquery-3.6.0.min.js"></script>
-    <script src="assets/js/navbar.js"></script>
+    <script src="assets/js/login-check.js"></script>
+    <script src="assets/js/log-out.js"></script>
     <script src="assets/js/film.js"></script>
     <script src="assets/js/comments.js"></script>
     <script src="assets/js/add-comment.js"></script>
     <script src="assets/js/delete-film.js"></script>
 
 </head>
-<body>
+<body id="body">
   
   <div class="container">
 
@@ -38,8 +39,8 @@
 
         <nav class="navbar-nav">
           <div class="navbar-ul">
-            <span> <a href="./index.html" class="navbar-link">Inicio</a> </span>
-            <span> <a href="#categorias" class="navbar-link">Categorias</a> </span>
+            <span id="hm_sp"> <a href="./index.html" class="navbar-link">Inicio</a> </span>
+            <span id="cat_sp"> <a href="#categorias" class="navbar-link">Categorias</a> </span>
           </div>
         </nav>
 
@@ -47,12 +48,8 @@
 
         <div class="navbar-actions">
 
-          <div action="#" class="navbar">
-            <input type="text" name="search" placeholder="Buscar películas..." class="navbar-search" autocomplete="off">
-          </div>
-
           <a href="" id="edit-button-link">
-            <span class="btn navbar-button-edit" id="edit-button">Editar Pelicula</span>
+            <span class="btn" id="edit-button">Editar Pelicula</span>
           </a>
 
           <a href="./add-film.html" >
@@ -87,7 +84,7 @@
             <p class="info-film-u" id="p-score"></p>
           </div>
 
-            <button class="btn navbar-button-edit" id="delete-button">Borrar Pelicula</button>
+            <button class="btn" style="margin-top: 20px;" id="delete-button">Borrar Pelicula</button>
 
       </div>
 

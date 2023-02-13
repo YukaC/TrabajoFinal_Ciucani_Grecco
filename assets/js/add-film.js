@@ -1,6 +1,7 @@
 $( document ).ready(function() {
     $('#title-page').text("Subir Pelicula");
     $("#film-form").submit(function(event) {
+        var sta = null;
         event.preventDefault();
         const nombre_pelicula = $("#add-nombre-pelicula").val();
         const sinopsis = $("#add-sinopsis").val();
@@ -36,9 +37,5 @@ $( document ).ready(function() {
             .fail(function(error) {
                 alert ("Error al subir pelicula");
             })
-            .always(function() {
-                
-            });
-
     });
 });

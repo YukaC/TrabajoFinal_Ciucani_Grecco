@@ -20,9 +20,11 @@
 
   <script src="assets/js/jquery-3.6.0.min.js"></script>
   <script src="assets/js/main.js"></script>
-  <script src="assets/js/navbar.js"></script>
+  <script src="assets/js/login-check.js"></script>
   <script src="assets/js/banner-main.js"></script>
   <script src="assets/js/search.js"></script>
+  <script src="assets/js/filter-bar.js"></script>
+  <script src="assets/js/log-out.js"></script>
 
 </head>
 
@@ -35,18 +37,15 @@
     <header>
       <div class="navbar-cont">
 
+        <!-- navbar -->
+        
+        <div class="navbar-ul">
         <a href="./index.html" class="navbar-brand">
           <img src="./assets/images/logo.png" class="logo">
         </a>
-
-        <!-- navbar -->
-
-        <nav class="navbar-nav">
-          <div class="navbar-ul">
-            <span> <a href="./index.html" class="navbar-link">Inicio</a> </span>
-            <span> <a href="#categorias" class="navbar-link">Categorias</a> </span>
-          </div>
-        </nav>
+          <span id="hm_sp"> <a href="./index.html" class="navbar-link">Inicio</a> </span>
+          <span id="cat_sp"> <a href="#categorias" class="navbar-link">Categorias</a> </span>
+        </div>
 
         <!-- Busqueda e inicio de sesion -->
 
@@ -57,11 +56,11 @@
             
           </div>
           
-          <a href="./add-film.html" >
+          <a href="./add-film.html" class="navbar-button">
             <button class="btn navbar-button-upload" id="upload-button">Subir Pelicula</button>
           </a>
 
-          <a href="./login.html" class="navbar-button ">
+          <a href="./login.html" class="navbar-button">
             <button class="btn" id="login-button">Iniciar Sesión</button>
           </a>
 
@@ -113,6 +112,45 @@
         </div>
       </section>
 
+      <!-- Selección de directores -->
+      <section class="directors">
+
+        <div class="filter-bar">
+
+          <div class="filter-drop">
+
+            <select class="director" id="directors">
+              <option value="0">Todos los directores</option>
+              <option value="1">Chad Stahelski</option>
+              <option value="2">Jon Watts</option>
+              <option value="3">Lana Wachowski</option>
+              <option value="4">Chloe Zhao</option>
+              <option value="5">Denis Villeneuve</option>
+              <option value="6">Byron Howard</option>
+              <option value="7">Jared Bush</option>
+              <option value="8">Destin Daniel Cretton</option>
+              <option value="9">Ruben Fleischer</option>
+              <option value="10">Anthony Russo</option>
+              <option value="11">Joe Russo</option>
+              <option value="12">Matt Reeves</option>
+            </select>
+
+            <select class="genders" id="genders">
+              <option value="0">Todos los Generos</option>
+              <option value="1">Acción</option>
+              <option value="2">Suspenso</option>
+              <option value="3">Aventura</option>
+              <option value="4">Ciencia Ficción</option>
+              <option value="5">Musical</option>
+              <option value="6">Comedia</option>
+              <option value="7">Fantasía</option>
+            </select>
+
+          </div>
+
+        </div>
+
+      </section>
 
             <!-- Peliculas -->
       <section class="movies" id="section-movies">

@@ -4,7 +4,7 @@ $( document ).ready(function() {
     const urlParams = new URLSearchParams(queryString);
     $.ajax({
         method: "GET",
-        url: "http://127.0.0.1:5000/peliculas/"+urlParams.get('id'),
+        url: "http://127.0.0.1:5000/mostrar-pelicula/"+urlParams.get('id'),
         headers: {  'Access-Control-Allow-Origin': '*' },
         contentType: "application/json; charset=utf-8"
     })
