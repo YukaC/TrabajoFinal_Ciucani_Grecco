@@ -13,7 +13,7 @@ $( document ).ready(function() {
                 window.location.href = "index.html";
             })
             .fail(function() {
-                alert ("Error al eliminar la pelicula");
+                alert ("Error al eliminar la pelicula, no se puede eliminar una pelicula con comentarios");
             });
     });
 });

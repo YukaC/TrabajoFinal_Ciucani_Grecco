@@ -1,4 +1,5 @@
 $( document ).ready(function() {
+
     $("#login-form").submit(function(event) {
         event.preventDefault();
         const username = $("#login-username").val();
@@ -21,10 +22,12 @@ $( document ).ready(function() {
             .done(function(user) { 
                 sessionStorage.setItem("logged_In", true); 
                 alert ("Bienvenido ");
+                sessionStorage.setItem('username', $("#login-username").val());
                 window.location = './index.html';
             })
             .fail(function(error) {
                 sessionStorage.setItem("logged_In", false);
+                sessionStorage.setItem('username', "");
                 alert ("Usuario o contraseña incorrectos");
             })
         }

@@ -1,10 +1,12 @@
 $( document ).ready(function() {
+
     if (sessionStorage.getItem("logged_In") == "true"){
         $("#edit-button").show();
     }
     else{
         $("#edit-button").hide();
         $(".navbar").show();
+        $("#delete-button").hide();
     }
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);

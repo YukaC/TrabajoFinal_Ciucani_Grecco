@@ -23,6 +23,7 @@ $( document ).ready(function() {
             }
         })
             .done(function(comentario) {
+                if( sessionStorage.getItem("logged_In") == "true") {
                     alert ("Comentario agregado correctamente");
 
                     $('#comments-cont').append ('\
@@ -34,10 +35,11 @@ $( document ).ready(function() {
                         </div>\
                     <p id="comment-user">'+ comentario.texto +'</p>\
                     ');
+                }
             })
 
             .fail(function(error) {
-                alert ("Error al añadir Comentario");
+                alert ("Error al añadir Comentario, debes estar logueado para hacerlo");
             })
         });
 });

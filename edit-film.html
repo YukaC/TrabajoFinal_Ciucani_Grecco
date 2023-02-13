@@ -16,7 +16,8 @@
     <link href="https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900" rel="stylesheet" />
 
     <script src="assets/js/jquery-3.6.0.min.js"></script>
-    <script src="assets/js/navbar.js"></script>
+    <script src="assets/js/login-check.js"></script>
+    <script src="assets/js/log-out.js"></script>
     <script src="assets/js/edit-film.js"></script>
 
 </head>
@@ -36,17 +37,13 @@
         <nav class="navbar-nav">
           <div class="navbar-ul">
             <span> <a href="./index.html" class="navbar-link">Inicio</a> </span>
-            <span> <a href="#categorias" class="navbar-link">Categorias</a> </span>
+            <span id="cat_sp"> <a href="#categorias" class="navbar-link">Categorias</a> </span>
           </div>
         </nav>
 
         <!-- Busqueda e inicio de sesion -->
 
         <div class="navbar-actions">
-
-          <div action="#" class="navbar">
-            <input type="text" name="search" placeholder="Buscar películas..." class="navbar-search" autocomplete="off">
-          </div>
 
           <a href="./add-film.html" >
             <span class="btn navbar-button-upload" id="upload-button">Subir Pelicula</span>
@@ -81,10 +78,56 @@
               
               <input type="text" placeholder="Nombre de la Pelicula" class="add-film-text-input" id="edit-nombre-pelicula" required>
               <input type="text" placeholder="Sinopsis" class="add-film-text-input" id="edit-sinopsis" required>
-              <input type="text" placeholder="Primer Genero" class="add-film-text-input" id="edit-genero" required>
-              <input type="text" placeholder="Segundo Genero" class="add-film-text-input" id="edit-genero2" required>
-              <input type="text" placeholder="Primer Director" class="add-film-text-input" id="edit-director" required>
-              <input type="text" placeholder="Segundo Director (No Obligatorio)" class="add-film-text-input" id="edit-director2">
+              <select id="edit-genero" class="add-film-text-input" required>
+                <option value="" selected disabled hidden>Elija Primer Genero</option>
+                <option value="1">Acción</option>
+                <option value="2">Suspenso</option>
+                <option value="3">Aventura</option>
+                <option value="4">Ciencia Ficción</option>
+                <option value="5">Musical</option>
+                <option value="6">Comedia</option>
+                <option value="7">Fantasía</option>
+              </select>
+              <select id="edit-genero2" class="add-film-text-input" required>
+                <option value="" selected disabled hidden>Elija Segundo Genero</option>
+                <option value="1">Acción</option>
+                <option value="2">Suspenso</option>
+                <option value="3">Aventura</option>
+                <option value="4">Ciencia Ficción</option>
+                <option value="5">Musical</option>
+                <option value="6">Comedia</option>
+                <option value="7">Fantasía</option>
+              </select>
+              <select id="edit-director" class="add-film-text-input" required>
+                <option value="" selected disabled hidden>Elija Primer Director</option>
+                <option value="1">Chad Stahelski</option>
+                <option value="2">Jon Watts</option>
+                <option value="3">Lana Wachowski</option>
+                <option value="4">Chloe Zhao</option>
+                <option value="5">Denis Villeneuve</option>
+                <option value="6">Byron Howard</option>
+                <option value="7">Jared Bush</option>
+                <option value="8">Destin Daniel Cretton</option>
+                <option value="9">Ruben Fleischer</option>
+                <option value="10">Anthony Russo</option>
+                <option value="11">Joe Russo</option>
+                <option value="12">Matt Reeves</option>
+              </select>
+              <select id="edit-director2" class="add-film-text-input">
+                <option value="" selected disabled hidden>Elija Segundo Director (No Obligatorio)</option>
+                <option value="1">Chad Stahelski</option>
+                <option value="2">Jon Watts</option>
+                <option value="3">Lana Wachowski</option>
+                <option value="4">Chloe Zhao</option>
+                <option value="5">Denis Villeneuve</option>
+                <option value="6">Byron Howard</option>
+                <option value="7">Jared Bush</option>
+                <option value="8">Destin Daniel Cretton</option>
+                <option value="9">Ruben Fleischer</option>
+                <option value="10">Anthony Russo</option>
+                <option value="11">Joe Russo</option>
+                <option value="12">Matt Reeves</option>
+              </select>
               <input type="text" placeholder="Duración" class="add-film-text-input" id="edit-duracion" required>
               <input type="number" placeholder="Año" class="add-film-text-input" id="edit-year" required>
               <input type="number" placeholder="Puntuación (1-10)" step="0.1" min="0" max="10" class="add-film-text-input" id="edit-score" required>
