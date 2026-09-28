@@ -1,1 +1,4 @@
 ﻿.vscode/settings.json
+
+# CodeGraph index (local)
+.codegraph/
